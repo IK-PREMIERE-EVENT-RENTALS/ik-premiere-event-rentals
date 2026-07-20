@@ -1,76 +1,235 @@
-body{
+*{
     margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
     font-family:Arial, Helvetica, sans-serif;
     background:#111;
-    color:#ffffff;
+    color:#fff;
     line-height:1.6;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
+/* HERO SECTION */
+
 .hero{
     min-height:100vh;
-    background:linear-gradient(
-        rgba(0,0,0,.75),
-        rgba(0,0,0,.75)
+    position:relative;
+    background:
+    linear-gradient(
+        rgba(0,0,0,.65),
+        rgba(0,0,0,.65)
     ),
-    url('https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1200&auto=format&fit=crop');
+    url('https://images.unsplash.com/photo-1519167758481-83f29c6d7f65?q=80&w=1600&auto=format&fit=crop');
     background-size:cover;
     background-position:center;
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
     text-align:center;
     padding:20px;
 }
 
+.hero div{
+    max-width:850px;
+}
+
 .hero h1{
     color:#d4af37;
-    font-size:4rem;
+    font-size:4.5rem;
     margin-bottom:20px;
+    text-shadow:0 4px 20px rgba(0,0,0,.5);
 }
 
 .hero p{
-    font-size:1.4rem;
-    margin-bottom:25px;
+    font-size:1.5rem;
+    margin-bottom:30px;
 }
 
 .btn{
     display:inline-block;
-    padding:15px 25px;
     background:#d4af37;
     color:#000;
     text-decoration:none;
+    padding:15px 30px;
     border-radius:8px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#f2c94c;
+    transform:translateY(-2px);
+}
+
+/* TRUST BAR */
+
+.trust-bar{
+    background:#d4af37;
+    color:#000;
+    text-align:center;
+    padding:15px;
     font-weight:bold;
 }
 
+/* SECTIONS */
+
 .section{
-    padding:60px 10%;
+    padding:80px 10%;
 }
 
 .section h2{
     text-align:center;
     color:#d4af37;
-    margin-bottom:30px;
+    margin-bottom:40px;
+    font-size:2.3rem;
 }
 
+/* CARDS */
+
 .card{
-    background:#1f1f1f;
-    border:2px solid #d4af37;
-    border-radius:12px;
-    padding:25px;
+    background:#1a1a1a;
+    border:1px solid #d4af37;
+    border-radius:15px;
+    padding:30px;
     margin-bottom:25px;
+    transition:.3s;
+    box-shadow:0 0 20px rgba(0,0,0,.2);
+}
+
+.card:hover{
+    transform:translateY(-5px);
 }
 
 .card h3{
     color:#d4af37;
+    margin-bottom:15px;
 }
 
 .price{
+    color:#d4af37;
     font-size:2rem;
     font-weight:bold;
-    color:#d4af37;
     margin-top:15px;
 }
+
+/* PACKAGE GRID */
+
+.packages{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+/* REVIEWS */
+
+.review{
+    background:#1b1b1b;
+    border-left:5px solid #d4af37;
+    padding:25px;
+    margin-bottom:20px;
+    border-radius:8px;
+}
+
+/* GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:12px;
+    height:250px;
+    object-fit:cover;
+}
+
+/* FAQ */
+
+.faq{
+    background:#1c1c1c;
+    padding:25px;
+    border-radius:10px;
+    margin-bottom:15px;
+    border:1px solid #333;
+}
+
+.faq h3{
+    color:#d4af37;
+}
+
+/* FORMS */
+
+form{
+    max-width:800px;
+    margin:auto;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    margin-bottom:15px;
+    padding:15px;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+}
+
+textarea{
+    resize:vertical;
+}
+
+button{
+    width:100%;
+    background:#d4af37;
+    color:#000;
+    border:none;
+    padding:15px;
+    font-size:18px;
+    font-weight:bold;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#f2c94c;
+}
+
+/* AGREEMENT BOX */
+
+.agreement-box{
+    background:#222;
+    border:1px solid #d4af37;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+/* FLOATING CALL BUTTON */
+
+.call-button{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    background:#d4af37;
+    color:#000;
+    text-decoration:none;
+    font-weight:bold;
+    padding:15px 20px;
+    border-radius:50px;
+    box-shadow:0 5px 15px rgba(0,0,0,.3);
+    z-index:999;
+}
+
+/* FOOTER */
 
 footer{
     background:#000;
@@ -78,14 +237,24 @@ footer{
     padding:40px;
 }
 
-@media (max-width:768px){
-
-.hero h1{
-    font-size:2.5rem;
+footer p{
+    margin:10px 0;
 }
 
-.section{
-    padding:40px 20px;
-}
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:2.8rem;
+    }
+
+    .hero p{
+        font-size:1.1rem;
+    }
+
+    .section{
+        padding:50px 20px;
+    }
 
 }
